@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&display=swap');
+
+*{
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Questrial', sans-serif;
+  background-color: #000;
+}
+
+input{
+  outline: none;
+}
+
+a{ 
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.562);
+  font-weight: 600;
+  transition: all 0.3s linear;
+  letter-spacing: 1px;
+  padding-bottom: 2px;
+}
+a:hover{
+  color: black;
+}
+
+
+/* style4 */
+.style5{
+  position: relative;
+  display: inline-block;
+}
+.style5:hover{
+  color: pink !important
+}
+
+.style5:after {
+  content:'';
+  position: absolute;
+  border-bottom: 2px solid rgb(30, 175, 237);
+  top: 102%;
+  transition: all 0.3s;
+ }
+
+/* style4 */
+.style4:after {
+  right: 100%;
+  left: 0;
+}
+.style4:hover:after {
+  right: 0;
+}
+
+/* style5 */
+.style5:after {
+  left: 50%;
+  right: 50%;
+}
+.style5:hover:after {
+  right: 0; left: 0;
+}
+
+
+.namelogoLink{
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+
+#site{
+  display: flex;
+}
+#page{
+  margin-left: 25%;
+  width: 100%;
+  height: 100vh;
+}
+
+.hljs{
+  background-color: transparent !important;
+}
+
+
+.root{
+  width: 100%;
+}
+
+.test{
+  background: rgb(248, 249, 250);
+  padding: 4rem 0rem !important;
+}
+
+.test2{
+  padding: 4rem 2.5rem !important;
+}
+
+.Blogtitle{
+  margin-bottom: 1rem !important;
+  line-height: '1.5',;
+  color: rgba(0, 0, 0, 0.8),;
+  font-weight: normal,;
+  font-family: Lora, Arial, serif;
+  font-size: 2.5rem,;
+  margin-bottom: 3rem;
+}
+.BlogBannerImg{
+  width: 100%;
+  margin-bottom: 3rem !important;
+}
+
+.BlogExplanation{
+  margin-bottom: 3rem;
+  font-size: 1.108rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-break: 1.5;
+  line-height: 1.5;
+  color: #868686;
+}
+
+.BoldParagraph{
+  margin-bottom: 2rem;
+  font-size: 1.278rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-break: 1.5;
+  line-height: 1.5;
+  color: #000;
+}
+.li{
+  margin-bottom: 1.4rem;
+  font-size: 1.108rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-break: 1.5;
+  line-height: 1.5;
+  color: #000;
+  padding-left: 1rem;
+}
+.ol{
+  margin: 0 1.1rem;
+  margin-bottom: 3rem;
+}
+.enphases{
+  color: purple;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.Paragraph{
+  margin-bottom: 3rem;
+  font-size: 1.178rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-break: 1.5;
+  line-height: 1.5;
+  color: #000;
+}
+.CodeBoard{
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.CodeBoardTitle{
+  background-color: #1f4287;
+  padding: '1rem 1rem';
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.CodeBoardTitleP{
+  text-align: right;
+  color: '#fff';
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: '1rem';
+  letter-spacing: 0.7px;   
+}
+.Code{
+  padding: 1rem;
+  background-color: #071e3d;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: #fff;
+}

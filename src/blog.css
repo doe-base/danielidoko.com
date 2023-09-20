@@ -1,0 +1,108 @@
+.root{
+    width: 100%;
+}
+
+.test{
+    background: rgb(248, 249, 250);
+    padding: 4rem 0rem !important;
+}
+
+.test2{
+    padding: 4rem 2.5rem !important;
+}
+
+.Blogtitle{
+    margin-bottom: 1rem !important;
+    line-height: '1.5',;
+    color: rgba(0, 0, 0, 0.8),;
+    font-weight: normal,;
+    font-family: Lora, Arial, serif;
+    font-size: 2.5rem,;
+    margin-bottom: 3rem;
+}
+.BlogBannerImg{
+    width: 100%;
+    margin-bottom: 3rem !important;
+}
+
+.BlogExplanation{
+    margin-bottom: 3rem;
+    font-size: 1.108rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-break: 1.5;
+    line-height: 1.5;
+    color: #868686;
+}
+
+.BoldParagraph{
+    margin-bottom: 2rem;
+    font-size: 1.278rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-break: 1.5;
+    line-height: 1.5;
+    color: #000;
+}
+.li{
+    margin-bottom: 1.4rem;
+    font-size: 1.108rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-break: 1.5;
+    line-height: 1.5;
+    color: #000;
+    padding-left: 1rem;
+}
+.ol{
+    margin: 0 1.1rem;
+    margin-bottom: 3rem;
+}
+.enphases{
+    color: purple;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+.Paragraph{
+    margin-bottom: 3rem;
+    font-size: 1.178rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-break: 1.5;
+    line-height: 1.5;
+    color: #000;
+}
+.CodeBoard{
+    margin-bottom: 3rem;
+    font-size: 1.178rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-break: 1.5;
+    line-height: 1.5;
+    color: #000;
+}
+.CodeBoardTitle{
+    background-color: #1f4287;
+    padding: '1rem 1rem';
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.CodeBoardTitleP{
+    text-align: right;
+    color: '#fff';
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: '1rem';
+    letter-spacing: 0.7px;   
+}
+Code{
+    padding: 1rem;
+    background-color: #071e3d;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #fff;
+}
+
+.color{
+    color: "#fff !important"
+}
