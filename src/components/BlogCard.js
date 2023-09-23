@@ -21,16 +21,34 @@ const useStyles = makeStyles((theme)=>{
             backgroundPosition: "center",
             backgroundSize: "cover",
 
-            // backgroundImage: (url)=>{
-            //     return `url(${url})`
-            // },
+            backgroundImage: ({img})=>{
+                return `url(${img})`
+            },
         },
         cardTitle: {
             fontFamily: "Lora, Arial, serif",
             fontWeight: "400",
             letterSpacing: "1px",
             lineHeight: "1.4",
-            marginBottom: '1rem'
+            marginBottom: '1rem',
+            transition: 'all 0.3s linear',
+            color: ({DarkMode})=>{
+                if(DarkMode){
+                  return '#bbbbbb'
+                }else{
+                  return "#686868"
+                }
+              },
+              
+              "&:hover": {
+                color: ({DarkMode})=>{
+                  if(DarkMode){
+                    return '#ffffff'
+                  }else{
+                    return "#000000"
+                  }
+                },
+              }
         },
         cardTextarea: {
             textAlign: "left",
@@ -73,9 +91,9 @@ const useStyles = makeStyles((theme)=>{
     }
 })
   
-  export default function Blogcard({ url, title, smallbody, readduration, date, catergory, number }){
+  export default function Blogcard({DarkMode, img, title, smallbody, readduration, date, catergory, number }){
   
-    const classes = useStyles(url)
+    const classes = useStyles({img, DarkMode})
     
     const createBlogUrl =(title, number)=>{
         title = title.replaceAll(" ", "-")
@@ -89,7 +107,7 @@ const useStyles = makeStyles((theme)=>{
         <Grid item xs={12} className={classes.card}>
             <Grid container>
                 <Grid item lg={3}>
-                    <div className={classes.cardImg} style={{ backgroundImage: `url(${url})` }}></div>
+                    <div className={classes.cardImg}></div>
                 </Grid>
 
                 <Grid item lg={9} className={classes.cardTextarea}>

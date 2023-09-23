@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme)=>{
             fontWeight: "normal",
             fontSize: "1rem",
             lineHeight: "1.05",
-            marginBottom: "1rem",
+            marginBottom: "1.677rem",
             letterSpacing: '0.5px',
             color: ({ DarkMode })=>{
                 if(DarkMode){
-                    return "#bbb"
+                    return "#bbbbbb"
                 }else{
-                    return "#999"
+                    return "#686868"
                 }
             }
         },
@@ -45,7 +45,14 @@ const useStyles = makeStyles((theme)=>{
             fontSize: '1.163rem',
             fontWeight: "600",
             fontFamily: 'Lora',
-            marginBottom: '1rem !important'
+            marginBottom: '1rem !important',
+            color: ({ DarkMode })=>{
+                if(DarkMode){
+                    return "#fff"
+                }else{
+                    return "#000"
+                }
+            },
         },
         inputHolder: {
             position: 'relative',
@@ -59,7 +66,21 @@ const useStyles = makeStyles((theme)=>{
             paddingRight: "3rem",
             fontFamily: "inherit",
             fontSize: "1rem",
-            border:  "1px solid rgb(30, 175, 237)"
+            border:  "1px solid rgb(30, 175, 237)",
+            backgroundColor: ({ DarkMode })=>{
+                if(!DarkMode){
+                    return "#fff"
+                }else{
+                    return "rgb(24, 24, 24)"
+                }
+            },
+            color: ({ DarkMode })=>{
+                if(DarkMode){
+                    return "#fff"
+                }else{
+                    return "#000"
+                }
+            },
         },
         sendIcon: {
             position: "absolute",
@@ -72,8 +93,13 @@ const useStyles = makeStyles((theme)=>{
             lineHeight: "1.4",
             letterSpacing: "0.5px",
             fontWeight: "400",
-            color: "rgba(0, 0, 0, 0.6)",
-            marginBottom: "1rem",
+            color: ({ DarkMode })=>{
+                if(DarkMode){
+                    return "#bbbbbb"
+                }else{
+                    return "#686868"
+                }
+            },
         },
         lightSwitch:{
             width: '2rem',
@@ -131,7 +157,7 @@ export default function Sidebar({ DarkMode, toggleMode }){
                     </div>
                 </form>
 
-                <p className={classes.copyright}>Copyright ©2022 All rights reserved | This template was made by IDG</p>
+                {/* <p className={classes.copyright}>Copyright ©2022 All rights reserved | This template was made by IDG</p> */}
             </div>
 
         </aside>

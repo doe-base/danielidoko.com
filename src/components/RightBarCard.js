@@ -30,7 +30,16 @@ const useStyles = makeStyles((theme)=>{
             fontWeight: "500",
             letterSpacing: "1px",
             lineHeight: "1.4",
-            marginBottom: '0.5rem'
+            marginBottom: '0.5rem',
+            cursor:'pointer',
+            transition: 'all 0.1s linear',
+            color: ({DarkMode})=>{
+                if(DarkMode){
+                  return '#fff'
+                }else{
+                  return "#000"
+                }
+              },
         },
         cardTextarea: {
             textAlign: "left",
@@ -76,8 +85,8 @@ const useStyles = makeStyles((theme)=>{
 })
   
 
-export default function RightbarCard(){
-    const classes = useStyles() 
+export default function RightbarCard({ DarkMode }){
+    const classes = useStyles({ DarkMode }) 
 
     return (
         <>

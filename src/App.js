@@ -40,7 +40,6 @@ function App() {
   const createBlogUrl =(title, number)=>{
     title = title.replaceAll(" ", "-")
     const url = title + "-" + number
-    console.log(url)
     return url
   }
 

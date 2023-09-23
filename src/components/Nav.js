@@ -72,9 +72,9 @@ export default function Nav({ DarkMode }){
     useEffect(()=>{
         var elements = document.querySelectorAll('#sidenavlink');
         elements.forEach((element) => {
-            element.style.color = `${DarkMode ? '#bbb' : "#999" }`;
+            element.style.color = `${DarkMode ? '#bbbbbb' : "#686868" }`;
         })
-    },[])
+    },[DarkMode])
      
 
     return (

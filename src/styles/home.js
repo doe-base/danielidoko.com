@@ -4,7 +4,6 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => {
     return {
       test: {
-        background: "rgb(248, 249, 250)",
         padding: "4rem 0rem !important",
       },
       test2: {
@@ -26,7 +25,21 @@ const useStyles = makeStyles((theme) => {
         paddingLeft: "2.5rem",
         fontFamily: "inherit",
         fontSize: "1rem",
-        border:  "1px solid rgb(230, 230, 230)"
+        border:  "1px solid rgba(230, 230, 230, 0.5)",
+        backgroundColor: ({ DarkMode })=>{
+          if(!DarkMode){
+              return "#fff"
+          }else{
+              return "rgb(24, 24, 24)"
+          }
+        },
+        color: ({ DarkMode })=>{
+            if(DarkMode){
+                return "#fff"
+            }else{
+                return "#000"
+            }
+        },
       },
       sendIcon: {
         position: "absolute",
@@ -42,7 +55,13 @@ const useStyles = makeStyles((theme) => {
         fontStyle: "italic",
         marginBottom: "1.5rem",
         lineHeight: "1.5",
-        color: "rgba(0, 0, 0, 0.8)",
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#fff'
+          }else{
+            return "rgba(0, 0, 0, 0.8)"
+          }
+        }
       },
       section: {
         padding: "1.5rem 1.5rem"
@@ -53,10 +72,27 @@ const useStyles = makeStyles((theme) => {
         justifyContent: "space-between",
         borderBottom: "1.8px solid #b1b1b1",
         paddingBottom: "10px",
-        color: "#000 !important",
         fontSize: "1rem",
         fontWeight: "500",
-        marginBottom: "10px"
+        marginBottom: "10px",
+        cursor: "pointer",
+        transition: 'all 0.1s linear',
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#bbbbbb'
+          }else{
+            return "#696969"
+          }
+        },
+        "&:hover": {
+          color: ({DarkMode})=>{
+            if(DarkMode){
+              return '#fff'
+            }else{
+              return "#000"
+            }
+          },
+        }
       },
       categoryLinkSpan: {
         fontSize: "1.1rem",
@@ -77,15 +113,34 @@ const useStyles = makeStyles((theme) => {
         marginBottom: "0.7rem",
         marginRight: "0.5rem",
         borderRadius: "4px",
-        color: "#000000",
-        border: "1px solid #ccc",
+        border: ({DarkMode})=>{
+          if(DarkMode){
+            return '1px solid rgba(204, 204, 204, 0.5)'
+          }else{
+            return "1px solid #ccc"
+          }
+        },
         fontSize: "11px",
         fontWeight: "bold",
         transition: "all 0.3s linear",
         cursor: "pointer",
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#ffffff'
+          }else{
+            return "#000000"
+          }
+        },
         
         "&:hover": {
           border: "1px solid #000",
+          border: ({DarkMode})=>{
+            if(DarkMode){
+              return '1px solid #fff'
+            }else{
+              return "1px solid #000"
+            }
+          },
         }
       },
       newlettersection: {
@@ -159,8 +214,14 @@ const useStyles = makeStyles((theme) => {
         fontSize: '15px',
         lineHeight: '1.8',
         fontWeight: '400',
-        color:' rgb(102, 102, 102)',
-        display: "block"
+        display: "block",
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#bbbbbb'
+          }else{
+            return "rgb(102, 102, 102)"
+          }
+        },
       },
       authorPLink: {
         color: 'rgb(30, 175, 237)'

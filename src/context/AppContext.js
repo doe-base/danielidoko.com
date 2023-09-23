@@ -5,6 +5,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
     const [ Blogs, SetBolgs ] = useState([])
+    console.log(Blogs)
     const [ DarkMode, setDarkMode ] = useState(JSON.parse(localStorage.getItem('mode')))
 
     
