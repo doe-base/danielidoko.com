@@ -14,13 +14,19 @@ const useStyles = makeStyles((theme)=>{
         },
         cardImgHolder: {
             width: "100%",
+
+            [theme.breakpoints.down('lg')]: {
+                paddingBottom: '0.8rem !important'
+            }
         },
         cardImg: {
             display: "block",
             height: "80px",
             width: "80px",
             borderRadius: "2px",
-            background: "url(img/bg6.jpg)",
+            backgroundImage: ({ img })=>{
+                return `url(${img})`
+            },
             backgroundPosition: "center",
             backgroundSize: "cover",
         },
@@ -43,7 +49,10 @@ const useStyles = makeStyles((theme)=>{
         },
         cardTextarea: {
             textAlign: "left",
-            paddingLeft: "0.8rem !important" 
+            paddingLeft: "0.8rem !important",
+            [theme.breakpoints.down('lg')]: {
+                paddingLeft: '0 !important'
+            }
         },
         cardInfo: {
             display: "flex",
@@ -85,8 +94,8 @@ const useStyles = makeStyles((theme)=>{
 })
   
 
-export default function RightbarCard({ DarkMode }){
-    const classes = useStyles({ DarkMode }) 
+export default function RightbarCard({ DarkMode, img, title, date, category, readduration }){
+    const classes = useStyles({ DarkMode, img }) 
 
     return (
         <>
@@ -95,37 +104,11 @@ export default function RightbarCard({ DarkMode }){
                     <div className={classes.cardImg}></div>
                 </Grid>
                 <Grid item lg={8} className={classes.cardTextarea}>
-                    <h1 className={classes.cardTitle}>All to know about TCP/IP</h1>
+                    <h1 className={classes.cardTitle}>{title}</h1>
                     <div className={classes.cardInfoHolder}>
-                        <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>June 28, 2019</p></div>
-                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>Javascript</p></div>
-                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>15</p></div>
-                    </div>
-                </Grid>
-            </Grid>
-            <Grid container className={classes.card}>
-                <Grid item lg={4} className={classes.cardImgHolder}>
-                    <div className={classes.cardImg}></div>
-                </Grid>
-                <Grid item lg={8} className={classes.cardTextarea}>
-                    <h1 className={classes.cardTitle}>Can one really learn CSS</h1>
-                    <div className={classes.cardInfoHolder}>
-                        <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>June 28, 2019</p></div>
-                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>Javascript</p></div>
-                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>15</p></div>
-                    </div>
-                </Grid>
-            </Grid>
-            <Grid container className={classes.card}>
-                <Grid item lg={4} className={classes.cardImgHolder}>
-                    <div className={classes.cardImg}></div>
-                </Grid>
-                <Grid item lg={8} className={classes.cardTextarea}>
-                    <h1 className={classes.cardTitle}>What is Internent protocols | 4 layers of protocol</h1>
-                    <div className={classes.cardInfoHolder}>
-                        <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>June 28, 2019</p></div>
-                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>Javascript</p></div>
-                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>15</p></div>
+                        <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{ date }</p></div>
+                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>{ category }</p></div>
+                        <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{ readduration }</p></div>
                     </div>
                 </Grid>
             </Grid>

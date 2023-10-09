@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import SingleBlog from "./pages/SingleBlog";
 import About from "./pages/About";
 import NeedHelp from "./pages/NeedHelp";
+import BlogPage from './pages/Blog'
 import { useGlobalContext } from "./context/AppContext"
 import { useEffect } from "react";
 
@@ -56,10 +57,11 @@ function App() {
                 const {title, number, _id, body} = item
                 const url = createBlogUrl(title, number)
                 return (
-                  <Route key={_id} path={url} element={<SingleBlog item={item}/>} />
+                  <Route key={_id} path={url} element={<SingleBlog DarkMode={DarkMode} item={item}/>} />
                 )
               })
             }
+            <Route path="/learn" element={<BlogPage DarkMode={DarkMode} Blogs={Blogs}/>}/>
             <Route path="/about" element={<About />} />
             <Route path="/need_help_with_coding" element={<NeedHelp />} />
           </Routes>

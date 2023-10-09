@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme)=>{
             backgroundImage: ({img})=>{
                 return `url(${img})`
             },
+            [theme.breakpoints.down('sm')]: {
+                display: 'none'
+            },
+            [theme.breakpoints.down('lg')]: {
+                marginBottom: '1rem'
+            },
         },
         cardTitle: {
             fontFamily: "Lora, Arial, serif",
@@ -52,7 +58,11 @@ const useStyles = makeStyles((theme)=>{
         },
         cardTextarea: {
             textAlign: "left",
-            paddingLeft: "1.5rem"
+            paddingLeft: "1.5rem",
+            
+            [theme.breakpoints.down('sm')]: {
+                paddingLeft: "0rem",
+            }
         },
         cardInfo: {
             display: "flex",
@@ -91,14 +101,13 @@ const useStyles = makeStyles((theme)=>{
     }
 })
   
-  export default function Blogcard({DarkMode, img, title, smallbody, readduration, date, catergory, number }){
+  export default function Blogcard({DarkMode, img, title, smallbody, readduration, date, category, number }){
   
     const classes = useStyles({img, DarkMode})
     
     const createBlogUrl =(title, number)=>{
         title = title.replaceAll(" ", "-")
         const url = title + "-" + number
-        console.log(url)
         return url
       }
       const blogUrl = createBlogUrl(title, number) 
@@ -114,7 +123,7 @@ const useStyles = makeStyles((theme)=>{
                     <a href={blogUrl}><h1 className={classes.cardTitle}>{title}</h1></a>
                     <div className={classes.cardInfoHolder}>
                         <div className={classes.cardInfo}><CalendarMonthIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{date}</p></div>
-                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>{catergory}</p></div>
+                        <div className={classes.cardInfo}><FolderOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoTextJavascipt}>{category}</p></div>
                         <div className={classes.cardInfo}><TimerOutlinedIcon className={classes.cardInfoIcon}/> <p className={classes.cardInfoText}>{readduration} min read</p></div>
                     </div>
                     <p className={classes.cardP}>{smallbody}</p>

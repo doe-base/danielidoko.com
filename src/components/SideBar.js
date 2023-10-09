@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme)=>{
                 }else{
                     return "#fff"
                 }
+            },
+            [theme.breakpoints.down('md')]: {
+                display: 'none'
             }
         },
 

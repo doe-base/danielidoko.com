@@ -3,9 +3,9 @@ import SingleBlogContainer from "../containers/SingleBlog";
 
 
 
-export default function SingleBlog({ item }) {
+export default function SingleBlog({ item, DarkMode }) {
 
   return (
-    <SingleBlogContainer />
+    <SingleBlogContainer item={item} DarkMode={DarkMode}/>
   );
 }

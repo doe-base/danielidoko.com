@@ -16,8 +16,14 @@ const useStyles = makeStyles((theme) => {
       Blogtitle: {
           marginBottom: "1rem !important",
           lineHeight: '1.5',
-          color: "rgba(0, 0, 0, 0.8)",
-          fontWeight: "normal",
+          color: ({DarkMode})=>{
+            if(DarkMode){
+              return '#fff !important'
+            }else{
+              return "#000 !important"
+            }
+          },
+          fontWeight: "600",
           fontFamily: "Lora, Arial, serif",
           fontSize: "2.5rem",
           marginBottom: "3rem"
@@ -97,6 +103,29 @@ const useStyles = makeStyles((theme) => {
           borderBottomLeftRadius: "6px",
           borderBottomRightRadius: "6px",
           color: "#fff"
+      },
+      infosHolder: {
+        display: 'flex',
+        marginBottom: '0.5rem',
+        color: ({DarkMode})=>{
+            if(DarkMode){
+              return '#bbbbbb !important'
+            }else{
+              return "#686868 !important"
+            }
+          },
+      },
+      infoCard: {
+        display: 'flex',
+        alignItems: 'center',
+        marginRight: '1rem'
+      },
+      titleSection: {
+        marginBottom: '2rem'
+      },
+      icon:{
+        marginRight: '0.2rem',
+        fontSize: '1rem !important',
       }
     };
   });

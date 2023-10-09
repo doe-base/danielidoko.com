@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => {
         padding: "4rem 0rem !important",
       },
       test2: {
+        width: '100%',
         padding: "4rem 2.5rem !important",
       },
       root: {
@@ -41,6 +42,25 @@ const useStyles = makeStyles((theme) => {
             }
         },
       },
+      label: {
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: "1.5rem",
+
+        [theme.breakpoints.up('md')]: {
+          display: 'none'
+        }
+      },
+      menuIcon: {
+        marginRight: '0.6rem',
+        color: ({ DarkMode })=>{
+          if(DarkMode){
+              return "#fff"
+          }else{
+              return "#000"
+          }
+        },
+      },
       sendIcon: {
         position: "absolute",
         top: "30%",
@@ -53,8 +73,8 @@ const useStyles = makeStyles((theme) => {
         fontSize: "1.2rem",
         fontWeight: "normal",
         fontStyle: "italic",
-        marginBottom: "1.5rem",
         lineHeight: "1.5",
+        marginBottom: '1rem',
         color: ({DarkMode})=>{
           if(DarkMode){
             return '#fff'
@@ -64,7 +84,21 @@ const useStyles = makeStyles((theme) => {
         }
       },
       section: {
-        padding: "1.5rem 1.5rem"
+        padding: "1.5rem 1.5rem",
+      },
+      searchSection: {
+        padding: "1.5rem 1.5rem",
+        display: 'block',
+        [theme.breakpoints.up('lg')]: {
+          display: 'none'
+        }
+      },
+      disappearingSection: {
+        padding: "1.5rem 1.5rem",
+        display: 'none',
+        [theme.breakpoints.up('lg')]: {
+          display: 'block',
+        }
       },
       categoryLink: {
         width: "100%",
@@ -225,6 +259,57 @@ const useStyles = makeStyles((theme) => {
       },
       authorPLink: {
         color: 'rgb(30, 175, 237)'
+      },
+      blogSwicht: {
+        width: '100%',
+        display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',
+      },
+      blogWitchText: {
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#fff !important'
+          }else{
+            return "#000 !important"
+          }
+        },
+      },
+      backToTop: {
+        color: '#00ff00b0 !important',
+        borderColor: '#00ff00b0 !important',
+        backgroundColor: 'rgb(24, 24, 24) !important',
+        textTransform: 'lowercase !important',
+        position: 'fixed !important',
+        bottom: '1rem !important',
+        right: '1rem !important',
+      },
+      bttContainer:{
+        display: 'none'
+      },
+
+      searchTermText: {
+        display: 'block',
+        width: '100%',
+        color: '#999',
+        fontSize: '1.7rem',
+        marginBottom: '3rem',
+        fontWeight: '550'
+      },
+      searchTermTextSpan: {
+        color: ({DarkMode})=>{
+          if(DarkMode){
+            return '#fff !important'
+          }else{
+            return "#000 !important"
+          }
+        },
+        fontWeight: '700'
+      },
+      nothingSearch: {
+        textAlign: 'center',
+        marginBottom: '2rem',
+        color: 'red',
+        display: 'block',
+        width: '100%'
       }
     };
   });
